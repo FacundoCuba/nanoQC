@@ -42,7 +42,7 @@ while IFS= read -r line; do
     if [ -d "$barcode" ]; then
         cd "$barcode" || exit
         cat *.fastq.gz > "../${barcode}.fastq.gz"
-        echo "${barcode} directory concatenated as ${barcode}.fastq.gz"
+        echo "Files at ${barcode} directory concatenated as ${barcode}.fastq.gz"
         cd ..
     else
         echo "Directory $barcode not found, skipping..."
