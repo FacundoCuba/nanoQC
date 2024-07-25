@@ -2,11 +2,12 @@
 
 # Function to display script usage
 function display_usage() {
-    echo "Usage: $0 -t TABLE -g INTEGER [-h]"
+    echo "Usage: $0 -t TABLE -g INTEGER -o STRING [-h]"
     echo ""
     echo "Options:"
     echo "  -t TABLE     Table file OR path to the table file"
     echo "  -g INTEGER   Genome size"
+    echo "  -o STRING    Output file basename"
     echo "  -h           Display this help message"
     exit 0
 }
@@ -14,12 +15,14 @@ function display_usage() {
 # Initialize variables
 barcode_sample_table=""
 genome_size=0
+output_basename=""
 
 # Parse options using getopts
-while getopts "t:g:h" option; do
+while getopts "t:g:o:h" option; do
     case "$option" in
         t) barcode_sample_table=$PWD/$OPTARG;;
         g) genome_size=$OPTARG;;
+        o) output_basename=$OPTARG;;
         h) display_usage;;
         :) printf "missing argument for -%s\n" "$OPTARG" >&2; display_usage >&2; exit 1;;
         \?) printf "illegal option: -%s\n" "$OPTARG" >&2; display_usage >&2; exit 1;;
@@ -27,8 +30,8 @@ while getopts "t:g:h" option; do
 done
 
 # Check if required arguments are provided
-if [ -z "$barcode_sample_table" ] || [ -z "$genome_size" ]; then
-    echo "Error: Arguments -t and -g must be provided."
+if [ -z "$barcode_sample_table" ] || [ -z "$genome_size" ] || [ -z "$output_basename" ]; then
+    echo "Error: Arguments -t, -g, and -o must be provided."
     display_usage
 fi
 
@@ -70,7 +73,7 @@ done
 echo ""
 
 cd nanoplot/ || exit
-output_file=nanoplot_summary.tsv
+output_file="${output_basename}_nanoplot_summary.tsv"
 
 # Write the header to the output file
 echo -e "sample_name\tnumber_of_reads\tnumber_of_bases\tmedian_read_length\tmean_read_length\tread_length_stdev\tn50\tmean_qual\tmedian_qual\tmean_depth" > "$output_file"
