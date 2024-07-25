@@ -36,7 +36,7 @@ The input table must have two columns:
 Execute the script at the `fastq_pass` directory.
 To run the script, use the following command:
 ```bash
-./script_name.sh -t <TABLE> -g <GENOME_SIZE> -o <OUTPUT_BASENAME>
+./nanoQC.sh -t <TABLE> -g <GENOME_SIZE> -o <OUTPUT_BASENAME>
 ```
 
 ### Options
