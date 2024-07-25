@@ -47,7 +47,7 @@ To run the script, use the following command:
 
 ### Example
 ```bash
-./script_name.sh -t barcode_sample_table.tsv -g 5000000 -o E_coli
+./nanoQC.sh -t E_coli_barcodes.tsv -g 5000000 -o E_coli
 ```
 
 ## Output
