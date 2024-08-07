@@ -1,5 +1,3 @@
-# README under construction
-
 # nanoQC
 This script is designed to automate the quality control (QC) analysis of Nanopore sequencing data files. It reads a table of barcodes and sample names, concatenates `*.fastq.gz` files, renames them according to sample names, and generates a comprehensive QC summary report using NanoPlot.
 
@@ -10,7 +8,6 @@ This script is designed to automate the quality control (QC) analysis of Nanopor
 - [Usage](#usage)
 - [Output](#output)
 - [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
 
 ## Installation
 Just download the script.
@@ -33,7 +30,7 @@ The input table must have two columns:
   ```
 
 ## Usage
-Execute the script at the `fastq_pass` directory.
+Execute the script at the `fastq_pass` directory or where the barcode directories are.
 To run the script, use the following command:
 ```bash
 ./nanoQC.sh -t <TABLE> -g <GENOME_SIZE> -o <OUTPUT_BASENAME>
@@ -57,5 +54,3 @@ To run the script, use the following command:
 
 ## Contact
 For questions or issues, please open an issue in this repository or contact facundogcuba@gmail.com.
-
-## Acknowledgments
