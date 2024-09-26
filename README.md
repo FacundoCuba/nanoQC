@@ -51,7 +51,7 @@ To run the script, use the following command:
 ```
 
 ## Output
-- A `fastq.gz` file named according to the sample name and barcode number.
+- A `fastq.gz` file and a `*_trimmed.fastq.gz` file named according to the sample name and barcode number.
 - A summary table for all the samples named `output_basename_nanoplot_summary.tsv` containing the following columns: sample_name, number_of_reads, number_of_bases, median_read_length, mean_read_length, read_length_stdv, n50, mean_qual, median_qual, and mean_depth.
 - A `nanoplot` directory containing the full Nanoplot report for each sample.
 
