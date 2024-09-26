@@ -13,8 +13,8 @@ This script is designed to automate the quality control (QC) analysis of Nanopor
 Just download the script.
 
 ## Requirements
- [Porechop](https://github.com/rrwick/Porechop)
- [NanoPlot](https://github.com/wdecoster/NanoPlot)
+- [Porechop](https://github.com/rrwick/Porechop)
+- [NanoPlot](https://github.com/wdecoster/NanoPlot)
  
  Ensure this tools are installed and accessible in your PATH.
  Be kind and please acknowledge these great authors too!
