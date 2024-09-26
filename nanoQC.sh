@@ -64,6 +64,12 @@ while IFS=$'\t' read -r barcode sample_name; do
 done < "$barcode_sample_table"
 echo ""
 
+# Perform adapter trimming using Porechop
+mkdir -p nanoplot
+for f in *.fastq.gz; do
+    porechop -i $f -o ${f%.fastq.gz}_trimmed.fastq.gz
+done
+
 # Perform a QC analysis using NanoPlot
 mkdir -p nanoplot
 for f in *.fastq.gz; do 
