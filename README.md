@@ -13,8 +13,9 @@ This script is designed to automate the quality control (QC) analysis of Nanopor
 Just download the script.
 
 ## Requirements
-- [Porechop](https://github.com/rrwick/Porechop)
+- [porechop](https://github.com/rrwick/Porechop)
 - [NanoPlot](https://github.com/wdecoster/NanoPlot)
+- [kraken2](https://github.com/DerrickWood/kraken2)
  
  Ensure this tools are installed and accessible in your PATH.
  Be kind and please acknowledge these great authors too!
@@ -51,9 +52,10 @@ To run the script, use the following command:
 ```
 
 ## Output
-- A `fastq.gz` file and a `*_trimmed.fastq.gz` file named according to the sample name and barcode number.
-- A summary table for all the samples named `output_basename_nanoplot_summary.tsv` containing the following columns: sample_name, number_of_reads, number_of_bases, median_read_length, mean_read_length, read_length_stdv, n50, mean_qual, median_qual, and mean_depth.
-- A `nanoplot` directory containing the full Nanoplot report for each sample.
+- A fastq_raw directory where the `*_fastq.gz` files are.
+- A fastq_trimmed directory where the `*_trimmed.fastq.gz` files are. Inside this directory you will also find a summary table for all the samples named `output_basename_nanoplot_summary.tsv` and two subdirectories: nanoplot and kraken2.
+  - `nanoplot` directory contains the Nanoplot report for each sample.
+  - `kraken2` directory contains the kraken2 report for each sample.
 
 ## Contact
 For questions or issues, please open an issue in this repository or contact facundogcuba@gmail.com.
