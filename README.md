@@ -52,7 +52,7 @@ To run the script, use the following command:
 ```
 
 ## Output
-- A fastq_raw directory where the `*_fastq.gz` files are.
+- A fastq_raw directory where the `*.fastq.gz` files are.
 - A fastq_trimmed directory where the `*_trimmed.fastq.gz` files are. Inside this directory you will also find a summary table for all the samples named `output_basename_nanoplot_summary.tsv` and two subdirectories: nanoplot and kraken2.
   - `nanoplot` directory contains the Nanoplot report for each sample.
   - `kraken2` directory contains the kraken2 report for each sample.
