@@ -42,6 +42,7 @@ command -v NanoPlot >/dev/null 2>&1 || { echo >&2 "NanoPlot is required but it's
 command -v kraken2 >/dev/null 2>&1 || { echo >&2 "kraken2 is required but it's not installed. Aborting."; exit 1; }
 
 # Read the file line by line for column 1 - barcodes
+sed -i -e '$a\ ' $barcode_sample_table
 while IFS= read -r line; do
     # Extract the specified column using awk
     barcode=$(echo "$line" | awk -v col=1 '{print $col}')
